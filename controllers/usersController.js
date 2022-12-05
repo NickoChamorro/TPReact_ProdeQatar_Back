@@ -1,4 +1,4 @@
-import UsersModel from "../models/models.js";
+import UsersModel from "../models/usersModel.js";
 
 export const getAlluser = async (req,res)=>{
     try {
@@ -7,46 +7,46 @@ export const getAlluser = async (req,res)=>{
     } catch (error) {
         res.json({message: error.message})
     }
-}
+};
 //MOSTRAR UN REGISTRO
-/*export const getBlog = async (req,res)=>{
+export const getUser = async (req,res)=>{
    try {
-    const blog = await BlogModel.findOne({
-        where:{id:req.params.id}
+    const user = await UsersModel.findOne({
+        where:{idUsuario:req.params.id}
     })
-    res.json(blog)
+    res.json(user)
    } catch (error) {
     res.json({message: error.message})
    } 
-}*/
+};
 //crear UN REGISTRO
-/* export const createBlog = async (req,res)=>{
+export const createUser = async (req,res)=>{
     try {
-        await BlogModel.create (req.body)
+        await UsersModel.create (req.body)
         res.json ({message: "Registro creado"})
     } catch (error) {
         res.json ({message:error.message})
     }
- };*/
+};
  //actualizar un registro
- /*export const updateBlog =async (req,res)=>{
+export const updateUser =async (req,res)=>{
     try {
-        await BlogModel.update(req.body,{
-            where:{id:req.params.id} 
+        await UsersModel.update(req.body,{
+            where:{idUsuario:req.params.id} 
         })
         res.json ({message: "Registro Actualizado"})
     } catch (error) {
         res.json ({message:error.message})
     }
- }*/
+};
 //borrar un resgistro
-/* export const deleteBlog = async (req,res)=>{
+export const deleteUser = async (req,res)=>{
     try {
-        await BlogModel.destroy({
-            where:{id:req.params.id} 
+        await UsersModel.destroy({
+            where:{idUsuario:req.params.id} 
         })
         res.json ({message: "Registro eliminado"})
     } catch (error) {
         res.json ({message:error.message}) 
     }
- }*/
+}

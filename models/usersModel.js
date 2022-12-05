@@ -3,7 +3,7 @@ import db from "../database/db.js"
 import DataTypes from "sequelize"
 
 const UsersModel = db.define("usuarios",{
-    idusuarios : {type:DataTypes.INTEGER,primaryKey:true},
+    idUsuario: {type:DataTypes.INTEGER,primaryKey:true},
     usuario:{type:DataTypes.STRING},
     pass:{type:DataTypes.STRING},
     nombre:{type:DataTypes.STRING},
