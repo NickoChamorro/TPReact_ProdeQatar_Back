@@ -1,7 +1,11 @@
 import express from "express"
 import cors from "cors" 
-import routes from "./routes/routes.js"
 import db from "./database/db.js"
+import userRouter from "./routes/userRoutes.js"
+import gamesRouter from "./routes/gamesRoutes.js"
+import predictionsRouter from "./routes/predictionsRoutes.js"
+import { PORTAPI } from "./config/config.js"
+
 
 const app = express()
 app.use(cors())
@@ -13,7 +17,9 @@ app.use(function(req, res, next) {
     next();
   });
 
-app.use("/users",routes)
+app.use("/users",userRouter);
+app.use("/predictions",predictionsRouter);
+app.use("/games",gamesRouter);
 
 try {
     await db.authenticate()
@@ -22,7 +28,7 @@ try {
     console.log(`conexion fallida por el error ${error}`)
 }
 
-const port = 8000
+const port = PORTAPI //8000
 app.listen(port,()=>{
     console.log(`Servidor ok en el puerto ${port}`)
 })
