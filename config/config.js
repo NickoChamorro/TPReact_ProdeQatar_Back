@@ -1,8 +1,8 @@
 export const PORTAPI = process.env.PORT || 8000;
 
-export const DH_HOST = process.env.DH_HOST || 'localhost';
-export const DH_USER = process.env.DH_USER || 'root';
-export const DH_PASS = process.env.DH_PASS || '';
-export const DH_NAME = process.env.DH_NAME || 'prode2022';
-export const DH_PORT = process.env.DH_PORT || 3306;
+export const DB_HOST = process.env.DB_HOST || 'localhost';
+export const DB_USER = process.env.DB_USER || 'root';
+export const DB_PASS = process.env.DB_PASS || '';
+export const DB_NAME = process.env.DB_NAME || 'prode2022';
+export const DB_PORT = process.env.DB_PORT || 3306;
 export const DIALECT = "mysql";
