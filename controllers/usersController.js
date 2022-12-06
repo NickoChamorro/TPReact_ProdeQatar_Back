@@ -49,4 +49,26 @@ export const deleteUser = async (req,res)=>{
     } catch (error) {
         res.json ({message:error.message}) 
     }
-}
+};
+ //loguear usuario
+ export const loginUser =async (req,res)=>{
+    try {
+        await UsersModel.update(req.body,{
+            where:{usuario:req.params.usuario, pass:req.params.pass}
+        })
+        res.json ({message: "Registro Actualizado"})
+    } catch (error) {
+        res.json ({message:error.message})
+    }
+};
+ //desloguear un usuario
+ export const logoutUser =async (req,res)=>{
+    try {
+        await UsersModel.update(req.body,{
+            where:{idUsuario:req.params.id} 
+        })
+        res.json ({message: "Registro Actualizado"})
+    } catch (error) {
+        res.json ({message:error.message})
+    }
+};

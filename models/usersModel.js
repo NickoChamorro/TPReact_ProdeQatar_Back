@@ -10,7 +10,8 @@ const UsersModel = db.define("usuarios",{
     apellido:{type:DataTypes.STRING},
     email:{type:DataTypes.STRING},
     admin:{type:DataTypes.TINYINT},
-    puntos:{type:DataTypes.INTEGER}
+    puntos:{type:DataTypes.INTEGER},
+    login:{type:DataTypes.TINYINT}
 }, { timestamps: false },
 )
 export default UsersModel
