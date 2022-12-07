@@ -50,25 +50,15 @@ export const deleteUser = async (req,res)=>{
         res.json ({message:error.message}) 
     }
 };
- //loguear usuario
- export const loginUser =async (req,res)=>{
+//Traer usuario por user+pass
+export const getUserByUserPass = async (req,res)=>{
     try {
-        await UsersModel.update(req.body,{
-            where:{usuario:req.params.usuario, pass:req.params.pass}
-        })
-        res.json ({message: "Registro Actualizado"})
+     const user = await UsersModel.findOne({
+         where:{usuario:req.params.usuario, pass:req.params.pass}
+     })
+     res.json(user)
     } catch (error) {
-        res.json ({message:error.message})
-    }
+     res.json({message: error.message})
+    } 
 };
- //desloguear un usuario
- export const logoutUser =async (req,res)=>{
-    try {
-        await UsersModel.update(req.body,{
-            where:{idUsuario:req.params.id} 
-        })
-        res.json ({message: "Registro Actualizado"})
-    } catch (error) {
-        res.json ({message:error.message})
-    }
-};
+
