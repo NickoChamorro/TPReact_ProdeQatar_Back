@@ -43,11 +43,11 @@ export const createPrediction = async (req,res)=>{
     }
  };
 
- //MOSTRAR REGISTROS POR USUARIO
+ //MOSTRAR REGISTROS POR USUARIO y PARTIDO
  export const getPredictionsByUser = async (req,res)=>{
     try {
          const predictions = await PredictionsModel.findAll({
-             where:{idUsuario:req.params.id}
+             where:{idUsuario:req.params.usuario, idPartido:req.params.partido}
          });
          res.json(predictions)
      } catch (error) {
