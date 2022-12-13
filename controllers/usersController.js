@@ -19,6 +19,16 @@ export const getUser = async (req,res)=>{
     res.json({message: error.message})
    } 
 };
+export const getUserArray = async (req,res)=>{
+    try {
+     const user = await UsersModel.findall({
+         where:{idUsuario:req.params.id}
+     })
+     res.json(user)
+    } catch (error) {
+     res.json({message: error.message})
+    } 
+ };
 //crear UN REGISTRO
 export const createUser = async (req,res)=>{
     try {
