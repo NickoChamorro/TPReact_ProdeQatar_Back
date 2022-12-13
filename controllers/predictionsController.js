@@ -28,7 +28,8 @@ export const getResult = async (req,res)=>{
                 'idUsuario',
                 [sequelize.fn('sum', sequelize.col('puntos')), 'puntos_total'],
             ],
-            group: ['idUsuario'],
+            where:{idUsuario:req.params.id},
+            group: ['idUsuario']
         });
         res.json(Result)
     } catch (error) {
@@ -38,7 +39,7 @@ export const getResult = async (req,res)=>{
 export const getPredictionByIdUser = async (req,res)=>{
     try {
          const prediction = await PredictionsModel.findAll({
-             where:{idUsuario:req.params.id}
+            where:{idUsuario:req.params.id}
          });
          res.json(prediction)
      } catch (error) {
