@@ -1,4 +1,5 @@
 import PredictionsModel from "../models/predictionsModel.js";
+import sequelize from "sequelize";
 
 //MOSTRAR TODOS LOS REGISTROS
 export const getAllPredictions = async (req,res)=>{
