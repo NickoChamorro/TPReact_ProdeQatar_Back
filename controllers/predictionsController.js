@@ -22,7 +22,7 @@ export const getPrediction = async (req,res)=>{
 };
 export const getPredictionByIdUser = async (req,res)=>{
     try {
-         const prediction = await PredictionsModel.findOne({
+         const prediction = await PredictionsModel.findAll({
              where:{idUsuario:req.params.id}
          });
          res.json(prediction)
