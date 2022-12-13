@@ -4,7 +4,9 @@ import db from "./database/db.js"
 import userRouter from "./routes/userRoutes.js"
 import gamesRouter from "./routes/gamesRoutes.js"
 import predictionsRouter from "./routes/predictionsRoutes.js"
+import processRouter from "./routes/processRoutes.js"
 import { PORTAPI } from "./config/config.js"
+
 
 
 const app = express()
@@ -20,6 +22,7 @@ app.use(function(req, res, next) {
 app.use("/users",userRouter);
 app.use("/predictions",predictionsRouter);
 app.use("/games",gamesRouter);
+app.use("/processAll", processRouter);
 
 try {
     await db.authenticate()
