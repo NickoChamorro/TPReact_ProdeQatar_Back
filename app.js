@@ -22,7 +22,6 @@ app.use(function(req, res, next) {
 app.use("/users",userRouter);
 app.use("/predictions",predictionsRouter);
 app.use("/games",gamesRouter);
-app.use("/processAll", processRouter);
 
 try {
     await db.authenticate()
