@@ -21,7 +21,7 @@ export const getUser = async (req,res)=>{
 };
 export const getUserArray = async (req,res)=>{
     try {
-     const user = await UsersModel.findall({
+     const user = await UsersModel.findAll({
          where:{idUsuario:req.params.id}
      })
      res.json(user)
