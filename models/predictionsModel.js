@@ -6,7 +6,8 @@ const PredictionsModel = db.define("predicciones",{
     idUsuario: {type:DataTypes.INTEGER},
     idPartido: {type:DataTypes.INTEGER},
     preEquipo1: {type:DataTypes.TINYINT},
-    preEquipo2: {type:DataTypes.TINYINT}
+    preEquipo2: {type:DataTypes.TINYINT},
+    puntos: {type:DataTypes.INTEGER}
 }, { timestamps: false },
 )
 export default PredictionsModel
