@@ -20,6 +20,16 @@ export const getPrediction = async (req,res)=>{
         res.json({message: error.message})
     } 
 };
+export const getPredictionByIdUser = async (req,res)=>{
+    try {
+         const prediction = await PredictionsModel.findOne({
+             where:{idUsuario:req.params.id}
+         });
+         res.json(prediction)
+     } catch (error) {
+         res.json({message: error.message})
+     } 
+ };
 
 //crear UN REGISTRO
 export const createPrediction = async (req,res)=>{

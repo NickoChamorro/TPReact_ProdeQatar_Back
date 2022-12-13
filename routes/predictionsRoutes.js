@@ -1,5 +1,5 @@
 import express from "express"
-import { createPrediction, getAllPredictions, getPrediction, getPredictionsByUser, updatePrediction } from "../controllers/predictionsController.js"
+import { createPrediction, getAllPredictions, getPrediction, getPredictionsByUser, updatePrediction, getPredictionByIdUser} from "../controllers/predictionsController.js"
 
 const predictionsRouter = express.Router()
 
@@ -7,6 +7,7 @@ predictionsRouter.get ("/",getAllPredictions)
 predictionsRouter.get ("/:id",getPrediction)
 predictionsRouter.post ("/",createPrediction)
 predictionsRouter.put ("/:id",updatePrediction)
+predictionsRouter.get ("/:id",getPredictionByIdUser)
 predictionsRouter.get ("/user/:usuario/game/:partido",getPredictionsByUser)
 
 export default predictionsRouter
