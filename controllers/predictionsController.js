@@ -20,6 +20,19 @@ export const getPrediction = async (req,res)=>{
         res.json({message: error.message})
     } 
 };
+export const getResult = async (req,res)=>{
+    try {
+        const Result = await PredictionsModel.findAll({
+            attributes: [
+                'idUsuario',
+                [sequelize.fn('sum', sequelize.col('puntos')), 'puntos_total'],
+            ]
+        });
+        res.json(Result)
+    } catch (error) {
+        res.json({message: error.message})
+    }
+};
 export const getPredictionByIdUser = async (req,res)=>{
     try {
          const prediction = await PredictionsModel.findAll({
