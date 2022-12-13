@@ -4,7 +4,6 @@ import db from "./database/db.js"
 import userRouter from "./routes/userRoutes.js"
 import gamesRouter from "./routes/gamesRoutes.js"
 import predictionsRouter from "./routes/predictionsRoutes.js"
-import processRouter from "./routes/processRoutes.js"
 import { PORTAPI } from "./config/config.js"
 
 
