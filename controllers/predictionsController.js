@@ -27,7 +27,8 @@ export const getResult = async (req,res)=>{
             attributes: [
                 'idUsuario',
                 [sequelize.fn('sum', sequelize.col('puntos')), 'puntos_total'],
-            ]
+            ],
+            group: ['idUsuario'],
         });
         res.json(Result)
     } catch (error) {
