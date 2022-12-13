@@ -7,7 +7,7 @@ predictionsRouter.get ("/",getAllPredictions)
 predictionsRouter.get ("/:id",getPrediction)
 predictionsRouter.post ("/",createPrediction)
 predictionsRouter.put ("/:id",updatePrediction)
-predictionsRouter.get ("/:id",getPredictionByIdUser)
+predictionsRouter.get ("/user/:id",getPredictionByIdUser)
 predictionsRouter.get ("/user/:usuario/game/:partido",getPredictionsByUser)
 
 export default predictionsRouter
